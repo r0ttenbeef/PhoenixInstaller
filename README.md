@@ -1,6 +1,7 @@
 # PhoenixInstaller
 Install PhoenixOS in your linux system without needing for Windows.
 # Disclaimer
+**Please read this carefully**
 This script is still under testing.. so you may face a problem while installing or may have system boot issue if something went wrong.. so please report any problems to make it more stable and reliable.
 ## This has been tested on
 **Ubuntu LTS**
@@ -12,6 +13,7 @@ This script is still under testing.. so you may face a problem while installing 
 1- Download latest Phoenix iso file from their official website [Here](http://www.phoenixos.com/en/download_x86)
 
 2 - Make sure that your linux partition have at least **35GB** space.
+
 2- Place the script in the same path of the .iso file.
 
 3- Start the script and proceed to the installation.
