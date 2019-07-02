@@ -4,8 +4,6 @@ Green='\033[0;32m'
 Yellow='\033[0;33m'
 Blue='\033[0;34m'
 Purple='\033[0;35m'
-Cyan='\033[0;36m'
-White='\033[0;37m'
 off='\033[0m'
 
 err="[${Red}-${off}]"
