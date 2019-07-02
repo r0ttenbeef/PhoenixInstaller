@@ -27,11 +27,6 @@ function ps(){
     printf ">> "
 }
 
-function pause(){
-    read -s -n 1 -p "Press any key to start.."
-    echo
-}
-
 chk_root(){
     if [ $EUID != 0 ];then cprint "$err Cannot use the script without root access!";exit 1;else clear;fi
 }
