@@ -11,6 +11,7 @@ This script is still under testing.. so you may face a problem while installing 
 # Installation Steps
 1- Download latest Phoenix iso file from their official website [Here](http://www.phoenixos.com/en/download_x86)
 
+2 - Make sure that your linux partition have at least **35GB** space.
 2- Place the script in the same path of the .iso file.
 
 3- Start the script and proceed to the installation.
