@@ -3,6 +3,7 @@ Install PhoenixOS in your linux system without needing for Windows.
 # Disclaimer
 **Please read this carefully**
 This script is still under testing.. so you may face a problem while installing or may have system boot issue if something went wrong.. so please report any problems to make it more stable and reliable.
+
 Make sure that your root partition is **Not encrypted** or not using **LVM**, so you can boot phoenix properly without any problems.
 ## This has been tested on
 **Ubuntu LTS**
@@ -13,6 +14,9 @@ Make sure that your root partition is **Not encrypted** or not using **LVM**, so
 
 **Debian 9.0 "Stretch"**
 # Installation Steps
+Check the video demonstration [Here](https://www.youtube.com/watch?v=rAs7swz7qCU) 
+
+
 1- Download latest Phoenix iso file from their official website [Here](http://www.phoenixos.com/en/download_x86)
 
 2 - Make sure that your linux partition have at least **35GB** space.
@@ -25,7 +29,6 @@ chmod 750 phoenix-installer.sh
 ./phoenix-installer.sh
 ```
 4- Enter **1** to Install the PhoenixOs, it will take some time depends on your machine, just **Don't Interrupt it** to avoid any critical issues.
-Check the video demonstration [Here](https://www.youtube.com/watch?v=rAs7swz7qCU) 
 
 # Uninstallation Steps
 1- Start the script and Enter **2** to start uninstallation process, it will remove PhoenixOs from your system and from grub menu either.
