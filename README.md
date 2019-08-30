@@ -13,9 +13,12 @@ Make sure that your root partition is **Not encrypted** or not using **LVM**, so
 **LinuxLite**
 
 **Debian 9.0 "Stretch"**
+
+**xubuntu**
 # Installation Steps
 Check the video demonstration [Here](https://www.youtube.com/watch?v=rAs7swz7qCU) 
 
+**Make sure that grub is already installed to your MBR**
 
 1- Download latest Phoenix iso file from their official website [Here](http://www.phoenixos.com/en/download_x86)
 
