@@ -4,6 +4,8 @@ Green='\033[0;32m'
 Yellow='\033[0;33m'
 Blue='\033[0;34m'
 Purple='\033[0;35m'
+Cyan='\033[0;36m'
+White='\033[0;37m'
 off='\033[0m'
 
 err="[${Red}-${off}]"
@@ -12,9 +14,8 @@ prog="[${Blue}*${off}]"
 done="[${Green}+${off}]"
 ask="[${Purple}?${off}]"
 
-version="1.0 Beta"
+version="1.5 Beta"
 author="deadc0w"
-sha256hash="ac19baee1611b494898f2f481c3ef480b1705ecb33676b4f3a5af864499e7ce0"
 os_path="/phoenix" # DONT CHANGE #
 
 function cprint(){
@@ -25,17 +26,23 @@ function ps(){
     printf ">> "
 }
 
+function pause(){
+    read -s -n 1 -p "Press any key to start.."
+    echo
+}
+
 chk_root(){
     if [ $EUID != 0 ];then cprint "$err Cannot use the script without root access!";exit 1;else clear;fi
 }
 
 function chk_iso(){
     if [ -f PhoenixOSInstaller*.iso ];then
-        cprint "$prog verifing the iso file.."
-        if [[ $(sha256sum PhoenixOSInstaller*.iso | grep $sha256hash) ]];then 
-            cprint "$done iso file is verified!"
+        cprint "$prog check the iso file.."
+        if [[ $(file PhoenixOSInstaller*.iso | grep -i "DOS/MBR boot sector") ]];then 
+            sha256hash="$(sha256sum PhoenixOSInstaller*.iso | awk {'print $1'})"
+            cprint "$done ISO SHA256 HASH: ${Purple}$sha256hash${off}"
         else
-            cprint "$err Cannot verify iso file, make sure that you have download it from phoenix official website"
+            cprint "$err iso file maybe corrupted, make sure that you have download it from phoenix official website"
             exit 8
         fi
     else 
@@ -76,6 +83,7 @@ menuentry \"PhoenixOS\"{
     initrd $os_path/initrd.img
 }""" >> /etc/grub.d/40_custom
 	sed -i 's/^GRUB_HIDDEN_/#GRUB_HIDDEN_/' /etc/default/grub
+    sed -i 's/^GRUB_TIMEOUT=0/GRUB_TIMEOUT=5/' /etc/default/grub
     update-grub
 	
     if [ $? == 0 ];then cleanup;exit 0; else cprint "$err Errors while updating grub!"; cleanup; exit 5;fi
