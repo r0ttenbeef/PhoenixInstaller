@@ -14,8 +14,8 @@ prog="[${Blue}*${off}]"
 done="[${Green}+${off}]"
 ask="[${Purple}?${off}]"
 
-version="1.5 Beta"
-author="deadc0w"
+version="2.0"
+author="r0ttenbeef"
 os_path="/phoenix" # DONT CHANGE #
 
 function cprint(){
